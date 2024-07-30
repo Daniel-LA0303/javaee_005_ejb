@@ -1,0 +1,4 @@
+org\example\models\Productos.class
+org\example\service\EJBServiceRemote.class
+org\example\Main.class
+org\example\service\ServiceEBJ.class
