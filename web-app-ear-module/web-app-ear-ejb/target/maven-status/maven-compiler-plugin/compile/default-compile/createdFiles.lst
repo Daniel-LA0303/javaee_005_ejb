@@ -1,6 +1,0 @@
-repositories\UsuarioRepositoryImpl.class
-repositories\UsuarioRepository.class
-services\UsuarioService.class
-org\example\ejb\entitys\Usuario.class
-org\example\ejb\ProducerResources.class
-services\UsuarioServiceImpl.class
