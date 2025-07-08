@@ -1,0 +1,67 @@
+Este proyecto es modular por lo que el despliegue es parte de uno o varios war
+
+recordemos que hay dentor de EAR tenemos
+EAR-EJB: regla de negocios
+EAR-WEB: exposicion con vistas JSF
+EAR-EJB-CLEINT: comunicacion con otro EJB
+
+Podemos decir que hay dos maneras de trabajar este tipo de proyectos
+Creando el proyecto con IDE (no recomendado)
+Creando el poryecto por medio de maven
+
+Para esta explicacion veremos como se crea un proyecto con maven
+
+entonces creamos 3 proyectos
+
+Proyecto EAR
+
+El proyecto se crea con un arquetipo definido por nosotros
+Empezamos con el de EAR que contendra como modulos a los otros dos que son:
+- relgas de negocio
+- web
+
+El proyecto tiene la mayor configuracion en el pom donde vemos plugins que los registra como 
+modulos
+Los proyectos aparte de ser modulos seran dependencias tan la relga de negocio como lo es 
+la exposicion de war entonces seran ejecuitados primeros
+
+Es como escalera de depndecias
+War necesita a ejb (regla de negocio) como dependencia
+EAR necesita a war y ejb como dependencias
+Orden del isntall
+EJB mvn install
+WAR mvn install
+EAR mvn package
+
+
+----
+Proyecto WAR (web)
+Seguimos con el proyecto de war o web que setra construido con el mismo arquetipo
+
+-----
+Proyecto ejb (regla de negocio)
+
+
+----
+
+Configuiracion de data source desde widlfly
+Necesitamos genera un data source que este en el serviedor de wildfly para que la app a l ser desplegada s
+haga uso de esta
+Creamo la parte de ProducerResources
+Creamos el modelo
+
+
+Pasando a WAR
+Necesitamos definir el beans para decir que utilizaremos CDI
+Finalmente listamos lo que mapeamos en la regla de negocio con una vista jsp (tambien puede ser
+JSF)
+
+
+DESPLIEGUE
+puede ser en la consola de wildfly o desde consola
+
+
+
+
+
+
